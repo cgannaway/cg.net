@@ -16,7 +16,11 @@ const uglify = require("gulp-uglify");
 // Load package.json for banner
 const pkg = require('./package.json');
 
-const banner = ['this is a banner'];
+const banner = ['/*!\n',
+' * Site - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+' * Copyright ' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+'*/\n'
+].join('');
 
 // BrowserSync
 function browserSync(done) {
