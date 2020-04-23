@@ -16,11 +16,11 @@ const uglify = require("gulp-uglify");
 // Load package.json for banner
 const pkg = require('./package.json');
 
-const banner = ['/*!\n',
-' * Site - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-' * Copyright ' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-'*/\n'
-].join('');
+const banner = ["/*!\n",
+" * Site - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n",
+" * Copyright " + (new Date()).getFullYear(), " <%= pkg.author %>\n",
+"*/\n"
+].join("");
 
 // BrowserSync
 function browserSync(done) {
@@ -47,30 +47,30 @@ function clean() {
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap'));
+  var bootstrap = gulp.src("./node_modules/bootstrap/dist/**/*")
+    .pipe(gulp.dest("./vendor/bootstrap"));
   // Font Awesome CSS
-  var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
-    .pipe(gulp.dest('./vendor/fontawesome-free/css'));
+  var fontAwesomeCSS = gulp.src("./node_modules/@fortawesome/fontawesome-free/css/**/*")
+    .pipe(gulp.dest("./vendor/fontawesome-free/css"));
   // Font Awesome JS
-  var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/js/**/*')
-    .pipe(gulp.dest('./vendor/fontawesome-free/js'));
+  var fontAwesomeJS = gulp.src("./node_modules/@fortawesome/fontawesome-free/js/**/*")
+    .pipe(gulp.dest("./vendor/fontawesome-free/js"));
   // Font Awesome Webfonts
-  var fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
-    .pipe(gulp.dest('./vendor/fontawesome-free/webfonts'));
+  var fontAwesomeWebfonts = gulp.src("./node_modules/@fortawesome/fontawesome-free/webfonts/**/*")
+    .pipe(gulp.dest("./vendor/fontawesome-free/webfonts"));
   // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
+  var jqueryEasing = gulp.src("./node_modules/jquery.easing/*.js")
+    .pipe(gulp.dest("./vendor/jquery-easing"));
   // Magnific Popup
-  var magnificPopup = gulp.src('./node_modules/magnific-popup/dist/*')
-    .pipe(gulp.dest('./vendor/magnific-popup'));
+  var magnificPopup = gulp.src("./node_modules/magnific-popup/dist/*")
+    .pipe(gulp.dest("./vendor/magnific-popup"));
   // jQuery
   var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
+      "./node_modules/jquery/dist/*",
+      "!./node_modules/jquery/dist/core.js"
     ])
-    .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery, jqueryEasing, magnificPopup);
+    .pipe(gulp.dest("./vendor/jquery"));
+  return merge(bootstrap, fontAwesomeCSS, fontAwesomeJS, fontAwesomeWebfonts, jquery, jqueryEasing, magnificPopup);
 }
 
 // CSS task
@@ -102,8 +102,8 @@ function css() {
 function js() {
   return gulp
     .src([
-      './js/*.js',
-      '!./js/*.min.js'
+      "./js/*.js",
+      "!./js/*.min.js"
     ])
     .pipe(uglify())
     .pipe(header(banner, {
@@ -112,7 +112,7 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest("./js"))
     .pipe(browsersync.stream());
 }
 
@@ -145,5 +145,5 @@ const deploy = require('gulp-gh-pages');
  */
 gulp.task('deploy', function () {
   return gulp.src("./dist/**/*")
-    .pipe(deploy())
+    .pipe(deploy());
 });
