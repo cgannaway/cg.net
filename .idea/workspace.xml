@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ca8a14f-94b3-4a86-9a65-b0bf6cbba257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,8 @@
       <updated>1597174295583</updated>
       <workItem from="1597174297119" duration="785000" />
       <workItem from="1597259858130" duration="1951000" />
-      <workItem from="1598837226209" duration="5899000" />
+      <workItem from="1598837226209" duration="6464000" />
+      <workItem from="1600135709617" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="update downloads">
       <created>1598841981158</created>
@@ -102,6 +104,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update downloads" />
