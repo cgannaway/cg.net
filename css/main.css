@@ -1,9 +1,9 @@
 .bg-main{
-    background-color: #0ca5c7;
+    background-color: #aaaaaa;
 }
 body {
     height: 100%;
-    background-color: #0ca5c7;
+    background-color: #aaaaaa;
 }
 .center {
     margin: 0;
@@ -38,7 +38,7 @@ img {
   height: 50px;
   line-height: 50px;
 }
-.color-dark{
+.color-darkblue{
   color: #06769e;
 }
 .color-darkgray{
